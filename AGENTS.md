@@ -2,7 +2,7 @@
 
 - **What it is:** the full screen, the questions and the secrets of a terminal
   program on Linux - `tui`, `panel`, `prompt`, `termguard`, `secret`. It knows nothing
-  of its users: no name, path, text or notion of tpm2-kira's or the vault's.
+  of its users: no name, path, text or notion of kira's or the vault's.
   They pass their own (a prompt's buffer, a screen's rows).
 - **The standard library and `golang.org/x/sys` alone.** No other dependency:
   programs that run as root and take PINs link this.

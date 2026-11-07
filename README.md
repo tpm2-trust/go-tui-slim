@@ -6,7 +6,7 @@ a full screen that redraws only what changed, questions on a terminal or
 from a pipe, the terminal given back on every way out, and secrets kept out
 of swap, core files and strings.
 
-Used by tpm2-kira (`tpm2-kira control`), tpm2-kira-vault (its control
+Used by kira (`kira control`), kira-vault (its control
 panel) and aSSH (the process lock). Part of the tpm2-trust workspace; owned by neither project.
 
 ## tui: the screen

@@ -6,8 +6,8 @@ a full screen that redraws only what changed, questions on a terminal or
 from a pipe, the terminal given back on every way out, and secrets kept out
 of swap, core files and strings.
 
-Used by tpm2-kira (`tpm2-kira control`) and tpm2-kira-vault (its control
-panel). Part of the tpm2-trust workspace; owned by neither project.
+Used by tpm2-kira (`tpm2-kira control`), tpm2-kira-vault (its control
+panel) and aSSH (the process lock). Part of the tpm2-trust workspace; owned by neither project.
 
 ## tui: the screen
 
@@ -24,6 +24,22 @@ k, ok, err := tui.NewReader(t.FD()).Read(50 * time.Millisecond)
 Text is measured in the cells it takes (`Cells`, `Layout`, `Fit`, `Sanitize`,
 `StripSGR`); `Columns` puts panes side by side; `StartHush` keeps the
 process's own output off a frame while it is drawn, and hands it over after.
+
+## panel: a control panel
+
+```go
+err := panel.Run(src, panel.Config{In: os.Stdin, Help: keysHelp, Loading: "Looking ...", Again: "Looking again ..."})
+```
+
+Sections on the left, the selected section's steps and the selected step's
+detail on the right (what it does, how it stands, the command it equals, what
+it destroys), the keys at the bottom; side by side from 72 columns, one at a
+time below. The program gives the `Source`: the header, the sections and their
+steps, their collection in the background (`Collect`: functions the loop
+applies, so the state is the loop's alone), and `Run`, which runs a step with
+the screen given back. The frame is up before anything came. `State`'s `Key`
+and `Frame` are pure: a program's own model is tested on them without a
+terminal.
 
 ## prompt: questions
 

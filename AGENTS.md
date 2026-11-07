@@ -1,7 +1,7 @@
 # Notes for agents working on go-tui-slim
 
 - **What it is:** the full screen, the questions and the secrets of a terminal
-  program on Linux - `tui`, `prompt`, `termguard`, `secret`. It knows nothing
+  program on Linux - `tui`, `panel`, `prompt`, `termguard`, `secret`. It knows nothing
   of its users: no name, path, text or notion of tpm2-kira's or the vault's.
   They pass their own (a prompt's buffer, a screen's rows).
 - **The standard library and `golang.org/x/sys` alone.** No other dependency:
